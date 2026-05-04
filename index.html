@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVIN CROCS - Premium Sandal Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">🐊 EVIN CROCS</div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#catalog" class="nav-link">Katalog</a>
+                    <a href="#contact" class="nav-link">Kontak</a>
+                    <a href="admin.html" class="nav-link admin-link">Admin</a>
+                </div>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Keranjang (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>EVIN CROCS PREMIUM</h1>
+            <p>Sandal Crocs Berkualitas Tinggi dengan Desain Elegan</p>
+            <p class="subtitle">Tersedia Warna: Hijau, Putih, Biru</p>
+            <button class="cta-btn" onclick="scrollToCatalog()">Belanja Sekarang</button>
+        </div>
+    </section>
+
+    <!-- Filter & Catalog -->
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2>Katalog Produk</h2>
+            
+            <!-- Filter -->
+            <div class="filter-section">
+                <label>Filter Warna:</label>
+                <button class="filter-btn active" onclick="filterByColor('all')">Semua</button>
+                <button class="filter-btn" onclick="filterByColor('hijau')">🟢 Hijau</button>
+                <button class="filter-btn" onclick="filterByColor('putih')">⚪ Putih</button>
+                <button class="filter-btn" onclick="filterByColor('biru')">🔵 Biru</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products akan dimuat dari JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <button class="close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Keranjang kosong</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                Total: <strong id="cart-total">Rp 0</strong>
+            </div>
+            <button class="checkout-btn" onclick="showCheckout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Pilih Metode Pembayaran</h3>
+                <button class="close-btn" onclick="closeCheckout()">✕</button>
+            </div>
+            <div class="payment-options">
+                <button class="payment-btn whatsapp" onclick="paymentWhatsapp()">
+                    💬 WhatsApp
+                    <span>0881012721958</span>
+                </button>
+                <button class="payment-btn gopay" onclick="paymentGoPay()">
+                    💳 GoPay
+                    <span>0881012721958</span>
+                </button>
+                <button class="payment-btn qris" onclick="showQRIS()">
+                    📱 QRIS
+                    <span>Scan untuk pembayaran</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QRIS Modal -->
+    <div class="modal" id="qris-modal">
+        <div class="modal-content qris-content">
+            <div class="modal-header">
+                <h3>Pembayaran QRIS</h3>
+                <button class="close-btn" onclick="closeQRIS()">✕</button>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='white'/%3E%3Ctext x='100' y='100' text-anchor='middle' dy='.3em' font-size='14'%3EQRIS Image%3C/text%3E%3C/svg%3E" alt="QRIS Code" class="qris-image">
+            <p>Scan QRIS di atas dengan aplikasi pembayaran Anda</p>
+            <p class="qris-note">Nama: MUHAMMAD RANGGA, HIBURAN</p>
+            <p class="qris-note">NMID: ID1026506326606</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📱 WhatsApp</h4>
+                    <p><a href="https://wa.me/60881012721958">0881012721958</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>💳 GoPay</h4>
+                    <p>0881012721958</p>
+                </div>
+                <div class="contact-item">
+                    <h4>🏪 Toko Online</h4>
+                    <p>EVIN CROCS PREMIUM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 EVIN CROCS - Premium Sandal Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
